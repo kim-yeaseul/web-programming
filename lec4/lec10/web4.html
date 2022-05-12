@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8"/>
+        <title> dom interface </title>
+    
+    </head>
+    <body>
+        <form action="">
+            <input id="username" type="text" value="Name of User" />
+            </form>
+            
+            <script type="text/javascript">
+                function myEventHandler() {
+            alert("Please type your full name"); }
+            var dom = document.getElementById("username");
+                dom.onclick = myEventHandler;
+            </script>
+
+    </body>
+</html>
