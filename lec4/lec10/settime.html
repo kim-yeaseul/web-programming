@@ -7,19 +7,28 @@
     
     <body>
         <script type="text/javascript"> var stopped = false;
-            function start() {
+            function start(){
             dom = document.getElementById("sec"); dom.value = parseInt(dom.value) + 1;
-            if (!stopped) setTimeout(start,1000);
+            if (!stopped) setTimeout(start,10);
             } 
-        </script>
+
+            function clear(){
+             dom = document.getElementById("sec"); 
+             dom.value = 0;
+    } 
+</script>
+
+    
 
             <h2> Stopwatch </h2>
             <form action="">
 
             <input type="button" value="Start" onclick="stopped=false; setTimeout(start,1000);" />
 
+
             <input type="button" value="Stop" onclick="stopped=true;" /> 
-            <input type="reset"/> <br><br>
+
+            <input type="button" value="clear" onclick="clear();" />
 
             <input id="sec" type="text" value="0" size="2"/> seconds
         </form>
