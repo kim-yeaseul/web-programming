@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스타벅스 스탬프</title>
+<link rel="stylesheet" href="style.css">
+<!-- 부트스트랩 css-->
+<link href="/Users/gim-yeseul/Desktop/resource/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body style="background-color: #1c3831;">
+	<wrap id = "wrap">
+	<header>
+		<br/><br/>
+	<h1 style = "color: aliceblue;">トモカTOPIK合格祈願プロジェクト</h1></header>
+<br/>
+	<div id = "starbuckscoupon">
+
+	<p style="font-size: 28px;" > 💯 : <strong id="counter" style="font-size: 28px">0</strong></p>
+
+
+	<p></p>
+    <button  class="btn btn-outline-success"  onclick="clickCounter()" type="button">40点以上</button>
+	<p></p>
+    <button  class="btn btn-outline-success" onclick="clickDown()" type="button">30点以下</button>
+    <p></p>
+	<button  class="btn btn-outline-success" onclick="countreset()" type="button">お疲れ様</button>
+
+</div>
+
+<div id = "coffeecount"> 
+
+	<p style="font-size: 30px;"> ☕️ : <strong id="count" style="font-size: 30px">0</strong></p>
+	
+    <p></p>
+    <button  class="btn btn-outline-success" onclick="starbucks()" type="button">スターバ</button>
+	<p></p>
+    <button  class="btn btn-outline-success" onclick="pay()" type="button">飲んだ💖</button>
+	<p></p>
+    <button  class="btn btn-outline-success" onclick="starbucksreset()" type="button">願い券👼🏻</button>
+</div>
+</wrap>
+	<script>
+
+        //카운트 업 
+
+		function clickCounter() {
+			if(typeof(Storage) !== "undefined") {
+				if (localStorage.clickcount) {
+					localStorage.clickcount = Number(localStorage.clickcount) + 1;
+				} else {
+					localStorage.clickcount = 0;
+				}
+				document.getElementById("counter").innerHTML = localStorage.clickcount ;
+			} else {
+				document.getElementById("counter").innerHTML = "이 문장은 사용자의 웹 브라우저가 Web Storage API를 지원하지 않을 때 나타납니다!";
+			}
+		}
+
+		//카운트 다운 
+		function clickDown() {
+			if(typeof(Storage) !== "undefined") {
+				if (localStorage.clickcount) {
+					localStorage.clickcount = Number(localStorage.clickcount) - 1;
+				} else {
+					localStorage.clickcount = 1;
+				}
+				document.getElementById("counter").innerHTML = localStorage.clickcount ;
+			} else {
+				document.getElementById("counter").innerHTML = "이 문장은 사용자의 웹 브라우저가 Web Storage API를 지원하지 않을 때 나타납니다!";
+			}
+		}
+		
+
+
+        // 카운트 리셋 
+        
+        function countreset() { 
+		localStorage.removeItem("clickcount");
+	
+	}
+	
+		
+
+        //스타벅스 카운트업
+        function starbucks() {
+
+			if(typeof(Storage) !== "undefined") {
+				if (localStorage.starbucks) {
+					localStorage.starbucks = Number(localStorage.starbucks) + 1;
+				} else {
+					localStorage.starbucks = 0;
+				}
+				document.getElementById("count").innerHTML =  localStorage.starbucks ;
+			} else {
+				document.getElementById("count").innerHTML = "이 문장은 사용자의 웹 브라우저가 Web Storage API를 지원하지 않을 때 나타납니다!";
+			}
+		}
+
+		//스타벅스 카운트 다운 
+		function pay () {
+			if(typeof(Storage) !== "undefined") {
+				if (localStorage.starbucks) {
+					localStorage.starbucks = Number(localStorage.starbucks) - 1;
+				} else {
+					localStorage.starbucks = 0;
+				}
+				document.getElementById("count").innerHTML =  localStorage.starbucks ;
+			} else {
+				document.getElementById("count").innerHTML = "이 문장은 사용자의 웹 브라우저가 Web Storage API를 지원하지 않을 때 나타납니다!";
+			}
+		}
+
+		// 스타벅스 리셋(교환권)
+		function starbucksreset() { 
+		localStorage.removeItem("starbucks");}
+
+		
+
+
+	
+	</script>
+
+ <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+<script type = "text/javascript" scr="/Users/gim-yeseul/Desktop/resource/bootstrap.css"></script>
+
+</body>
+
+</html>
+
+<!--스타벅스배경색#1c3831-->
