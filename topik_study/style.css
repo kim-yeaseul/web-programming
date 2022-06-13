@@ -1,0 +1,59 @@
+html {
+    background-color: #1c3831;
+}
+
+heaer {
+    background-color: #1c3831;;
+}
+
+h1{
+    text-align: center;
+    color:white;
+    background-color: #1c3831;;
+}
+
+#starbuckscoupon {
+    width: 30%;
+    height: 300%;
+    margin-left: 200px;
+    margin-top: 50px;
+    border-style: solid;
+    border-color: yellowgreen;
+    border-radius: 20px;
+    border-width: 5px;
+    padding-left: 120px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: white;
+    
+    float:left;
+}
+
+#coffeecount {
+    width : 30%;
+    height: 300%;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-style: solid;
+    border-color: yellowgreen;
+    border-width: 5px;
+    border-radius: 20px;
+    padding-left: 120px;
+    padding-top:18px;
+    padding-bottom: 18px;
+    float: left;
+    background-color: white;
+}
+
+body { 
+    background-color:#1c3831;
+}
+
+.btn-outline-success:focus {
+    border-color: #1c3831;
+    border:2px;
+outline-color: #1c3831;
+}
+
+
+
