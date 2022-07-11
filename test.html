@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+	overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  font-size: 100%;
+}
+
+nav {
+	top: 15%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  z-index: 100;
+  height: 90%;
+  left: 0;
+  width: 15%;
+  font-weight: 300;
+  font-size: 1rem;
+}
+nav em {
+	font-style: normal;
+	font-size: 13px;
+	text-transform: uppercase;
+	display: block;
+	margin-top: 15px;
+	color: #fff;
+}
+
+nav ul li a {
+	text-align: center;
+}
+
+nav ul {
+	position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	text-align: left;
+	list-style-type: none;
+	height: 70%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+	-ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+nav ul li {
+	text-align: center;
+	margin: 5px 0px;
+}
+nav a, nav a:visited, nav a:active {
+  color: #fff;
+}
+nav a {
+	text-decoration: none!important;
+	display: inline-block;
+	width: 140px;
+	padding: 15px 0px;
+	position: relative;
+	z-index: 0;
+	transition: all .5s;
+}
+nav a.active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+nav a::before {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+          <li><a href="#1"><img src="assets/images/전체 지도.png" alt="" width="60ox"> 
+            <em>전체 지도</em></a></li>
+          <li><a href="#2"><img src="assets/images/구급차.png" alt="" width="50px"> <em>응급실</em></a></li>
+        
+          <li><a href="#3"><img src="assets/images/병원.png" alt="" width="60px"> <em>일반 병원</em></a></li>
+          <li><a href="#4"><img src="assets/images/진료비.png" alt="" width="60px"> <em>비급여</em></a></li>
+          <li><a href="#5"><img src="assets/images/꿀팁.png" alt="" width="50px"> <em>건강관리 꿀팁</em></a></li>
+        </ul>
+      </nav>
+</body>
+
+<script>
+
+
+         // navigation click actions 
+         $('.scroll-link').on('click', function(event){
+                event.preventDefault();
+                var sectionID = $(this).attr("data-id");
+                scrollToID('#' + sectionID, 750);
+            });
+            // scroll to top action
+            $('.scroll-top').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop:0}, 'slow');         
+            });
+            // mobile nav toggle
+            $('#nav-toggle').on('click', function (event) {
+                event.preventDefault();
+                $('#main-nav').toggleClass("open");
+            });
+        
+        // scroll function
+        function scrollToID(id, speed){
+            var offSet = 0;
+            var targetOffset = $(id).offset().top - offSet;
+            var mainNav = $('#main-nav');
+            $('html,body').animate({scrollTop:targetOffset}, speed);
+            if (mainNav.hasClass("open")) {
+                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                mainNav.removeClass("open");
+            }
+        }
+        if (typeof console === "undefined") {
+            console = {
+                log: function() { }
+            };
+        }
+</script>
+</html>
